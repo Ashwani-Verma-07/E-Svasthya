@@ -11,15 +11,15 @@ li {
   text-decoration: none;
   color: white;
 }
-.logo {
+.logo img {
   width: max-content;
-  font-size: 4vh;
   z-index: 99;
-  font-family: Inconsolata;
+  width: 240px;
   background-color: #047c7c;
   cursor: pointer;
 }
 .navbar {
+  top: 0;
   position: sticky;
   height: 85px;
   font-weight: 600;
@@ -131,5 +131,14 @@ input[type="checkbox"] {
   }
   .navbar {
     height: max-content;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 490px) {
+  .logo {
+    width: 220px;
+  }
+  .navbar {
+    height: 70px;
+    margin-bottom: 22px;
   }
 }

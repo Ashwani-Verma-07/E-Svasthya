@@ -18,7 +18,7 @@ function App() {
       <Router>
         <div className="app">
           <Navbar1 />
-          <Geolocation />
+
           <Routes>
             <Route exact path="/about" element={<About />} />
             <Route exact path="/faqs" element={<Faqs />} />
@@ -31,6 +31,7 @@ function App() {
                     content="Medical Solution World"
                     para="Our platform provides a list of nearby hospitals that have all of the necessary facilities to efficiently treat specific conditions"
                   />
+                  <Geolocation />
                   <SearchBar placeholder={"Enter Injury"} data={Data} />
                   <HospitalList />
                 </>

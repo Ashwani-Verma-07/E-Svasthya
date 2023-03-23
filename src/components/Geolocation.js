@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./Geolocation.css";
 function Geolocation() {
   const [currentLocation, setCurrLocation] = useState({});
-  const [currentLocationJS, setcurrentLocationJS] = useState({});
+  const [currentLocationJS, setcurrentLocationJS] = useState(false);
   useEffect(() => {
     getLocation();
     getLocationJS();
@@ -13,20 +14,26 @@ function Geolocation() {
     setCurrLocation(location.data);
   };
   const getLocationJS = async () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-      setcurrentLocationJS({ latitude, longitude });
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        setcurrentLocationJS({ latitude, longitude });
+      });
+    } else {
+      document.getElementsByClassName("geolocation").innerHTML =
+        "Geolocation is not supported";
+    }
   };
   return (
     <div>
-      {/* <div className="geolocation">
-        <p>Longitude{currentLocation.longitude}</p>
-        <p>latitude {currentLocation.latitude}</p>
-        <p>City{currentLocation.city}</p>
-        <p>LongitudeJS {currentLocationJS.longitude}</p>
-        <p>LatitudeJS {currentLocationJS.latitude}</p>
-      </div> */}
+      <div className="geolocation">
+        {/* <p>Longitude{currentLocationJS.longitude}</p>
+        <p>latitude {currentLocationJS.latitude}</p>
+        */}
+        <p>Longitude : {currentLocation.longitude}</p>
+        <p>Latitude : {currentLocation.latitude}</p>
+        <p>City : {currentLocation.city}</p>
+      </div>
     </div>
   );
 }

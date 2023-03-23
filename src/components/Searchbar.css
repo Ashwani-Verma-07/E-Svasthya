@@ -78,3 +78,13 @@ a {
 #clearBtn {
   cursor: pointer;
 }
+@media (max-width: 880px) {
+  .search input {
+    width: 280px;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 490px) {
+  .search input {
+    width: 250px;
+  }
+}

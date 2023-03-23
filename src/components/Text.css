@@ -1,9 +1,11 @@
 .text__welcome {
   display: flex;
   justify-content: center;
-  font-size: 80px;
-  color: black;
+  font-size: 70px;
+  color: rgb(33, 33, 33);
   transition: 0.3s;
+  line-height: 1.3;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .welcome {
   margin-top: 5%;
@@ -19,14 +21,26 @@
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
+  line-height: 1.3;
 }
 @media (max-width: 880px) {
   .text__welcome {
-    font-size: 50px;
+    font-size: 40px;
+    color: #434343;
+    font-weight: 600;
+  }
+  .content {
+    font-size: 17px;
   }
 }
-@media (max-width: 480px) {
+@media only screen and (min-width: 300px) and (max-width: 490px) {
   .text__welcome {
-    font-size: 35px;
+    font-size: 33px;
+    color: #434343;
+    font-weight: 600;
+  }
+  .content {
+    font-size: 16px;
+    color: #6b6a6a;
   }
 }

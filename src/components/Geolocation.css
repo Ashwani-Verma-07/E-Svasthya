@@ -1,0 +1,8 @@
+.geolocation {
+  display: grid;
+  justify-content: center;
+  align-items: baseline;
+  align-content: space-evenly;
+  margin: 2%;
+  font-family: monospace;
+}
